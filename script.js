@@ -1,37 +1,20 @@
 
-// ===================================
-// DADOS DOS PERSONAGENS
-// ===================================
-
 const personagens = {
     1: {
-        nome: "Makx Ferraz",
-        idade: "25",
+        nome: "Makx",
+        idade: "23",
         classe: "Ocultista",
-        nex: "5%",
-
-        imagem: "imagens/p1.png",
-        atributos: "imagens/fichaAtributosimg.png",
-
-        pericias: [
-            "Ocultismo",
-            "Luta",
-            "Reflexos"
-        ],
-
+        nex: "55%",
+        imagem: "p1.png",
+        atributos: "fichaAtributosimg.png",
+        pericias: ["Ocultismo", "Luta", "Reflexos"],
         armas: [
             {
                 nome: "Foice de Sangue",
-                imagem: "imagens/foice.png"
-            },
-        
+                imagem: "foice.png"
+            }
         ],
-
-        rituais: [
-            "Cicatrização",
-            "Perturbação",
-            "Tecer ilusão",
-        ]
+        rituais: ["Hemorragia", "Derrame de Sangue"]
     },
 
     2: {
@@ -39,10 +22,8 @@ const personagens = {
         idade: "--",
         classe: "--",
         nex: "--",
-
-        imagem: "imagens/p2.png",
-        atributos: "imagens/fichaAtributosimg.png",
-
+        imagem: "p2.png",
+        atributos: "fichaAtributosimg.png",
         pericias: [],
         armas: [],
         rituais: []
@@ -53,10 +34,8 @@ const personagens = {
         idade: "--",
         classe: "--",
         nex: "--",
-
-        imagem: "imagens/p3.png",
-        atributos: "imagens/fichaAtributosimg.png",
-
+        imagem: "p3.png",
+        atributos: "fichaAtributosimg.png",
         pericias: [],
         armas: [],
         rituais: []
@@ -67,10 +46,8 @@ const personagens = {
         idade: "--",
         classe: "--",
         nex: "--",
-
-        imagem: "imagens/p4.png",
-        atributos: "imagens/fichaAtributosimg.png",
-
+        imagem: "p4.png",
+        atributos: "fichaAtributosimg.png",
         pericias: [],
         armas: [],
         rituais: []
@@ -81,10 +58,8 @@ const personagens = {
         idade: "--",
         classe: "--",
         nex: "--",
-
-        imagem: "imagens/p5.png",
-        atributos: "imagens/fichaAtributosimg.png",
-
+        imagem: "p5.png",
+        atributos: "fichaAtributosimg.png",
         pericias: [],
         armas: [],
         rituais: []
@@ -95,10 +70,8 @@ const personagens = {
         idade: "--",
         classe: "--",
         nex: "--",
-
-        imagem: "imagens/p6.png",
-        atributos: "imagens/fichaAtributosimg.png",
-
+        imagem: "p6.png",
+        atributos: "fichaAtributosimg.png",
         pericias: [],
         armas: [],
         rituais: []
@@ -106,10 +79,7 @@ const personagens = {
 };
 
 
-// ===================================
-// CLICAR NO PERSONAGEM
-// ===================================
-
+// CLICAR NOS PERSONAGENS
 document.querySelectorAll(".personagem").forEach(personagem => {
     personagem.addEventListener("click", () => {
         const id = personagem.dataset.id;
@@ -118,12 +88,8 @@ document.querySelectorAll(".personagem").forEach(personagem => {
 });
 
 
-// ===================================
 // ABRIR FICHA
-// ===================================
-
 function abrirFicha(dados){
-
     document.getElementById("fichaModal").style.display = "flex";
 
     document.getElementById("fichaNome").innerText = dados.nome;
@@ -142,29 +108,19 @@ function abrirFicha(dados){
 }
 
 
-// ===================================
 // FECHAR MODAL
-// ===================================
-
 document.querySelector(".fechar").addEventListener("click", () => {
     document.getElementById("fichaModal").style.display = "none";
 });
 
 
-// ===================================
-// TOGGLE DAS SEÇÕES
-// ===================================
-
+// ABRIR / FECHAR SEÇÕES
 function toggleSecao(id){
-    const secao = document.getElementById(id);
-    secao.classList.toggle("aberto");
+    document.getElementById(id).classList.toggle("aberto");
 }
 
 
-// ===================================
-// FECHAR TODAS AO ABRIR FICHA
-// ===================================
-
+// FECHAR TODAS
 function fecharTodasSecoes(){
     document.querySelectorAll(".conteudo-toggle").forEach(secao=>{
         secao.classList.remove("aberto");
@@ -172,10 +128,7 @@ function fecharTodasSecoes(){
 }
 
 
-// ===================================
 // PREENCHER LISTAS
-// ===================================
-
 function preencherLista(id, itens){
     const lista = document.getElementById(id);
     lista.innerHTML = "";
@@ -186,10 +139,7 @@ function preencherLista(id, itens){
 }
 
 
-// ===================================
 // PREENCHER ARMAS
-// ===================================
-
 function preencherArmas(armas){
     const container = document.getElementById("fichaArmas");
     container.innerHTML = "";
