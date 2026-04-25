@@ -1,10 +1,15 @@
-
+```html id="htmlcomfaviconcompleto"
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hexatombe</title>
+
+    <!-- ÍCONE DA ABA -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,10 +43,8 @@
 
             <div class="ficha-corpo">
 
-                <!-- FOTO PRINCIPAL -->
                 <img id="fichaImagem" class="foto-personagem" src="" alt="Personagem">
 
-                <!-- INFO -->
                 <div class="info-ficha">
 
                     <h1 id="fichaNome"></h1>
@@ -50,7 +53,6 @@
                     <p><strong>Classe:</strong> <span id="fichaClasse"></span></p>
                     <p><strong>NEX:</strong> <span id="fichaNex"></span></p>
 
-                    <!-- ATRIBUTOS -->
                     <div class="link-ficha" onclick="toggleSecao('atributosSecao')">
                         Atributos >>
                     </div>
@@ -58,7 +60,6 @@
                         <img id="fichaAtributosImg" class="atributos-img" src="" alt="Atributos">
                     </div>
 
-                    <!-- PERÍCIAS -->
                     <div class="link-ficha" onclick="toggleSecao('periciasSecao')">
                         Perícias >>
                     </div>
@@ -66,7 +67,6 @@
                         <ul id="fichaPericias"></ul>
                     </div>
 
-                    <!-- ARMAS -->
                     <div class="link-ficha" onclick="toggleSecao('armasSecao')">
                         Armas >>
                     </div>
@@ -74,7 +74,6 @@
                         <div id="fichaArmas"></div>
                     </div>
 
-                    <!-- RITUAIS -->
                     <div class="link-ficha" onclick="toggleSecao('rituaisSecao')">
                         Rituais >>
                     </div>
@@ -92,4 +91,4 @@
 
 </body>
 </html>
-
+```
