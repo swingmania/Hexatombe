@@ -9,25 +9,26 @@
 </head>
 <body>
 
+    <!-- HEADER -->
     <header class="topbar">
         <img src="logo.png" alt="Logo" class="logo">
     </header>
 
+    <!-- TELA PRINCIPAL -->
     <section class="hero">
 
-        <div class="overlay"></div>
-
         <div class="personagens">
-            <img src="p1.png" class="personagem" data-id="1">
-            <img src="p2.png" class="personagem" data-id="2">
-            <img src="p3.png" class="personagem" data-id="3">
-            <img src="p4.png" class="personagem" data-id="4">
-            <img src="p5.png" class="personagem" data-id="5">
-            <img src="p6.png" class="personagem" data-id="6">
+            <img src="p1.png" class="personagem" data-id="1" alt="Personagem 1">
+            <img src="p2.png" class="personagem" data-id="2" alt="Personagem 2">
+            <img src="p3.png" class="personagem" data-id="3" alt="Personagem 3">
+            <img src="p4.png" class="personagem" data-id="4" alt="Personagem 4">
+            <img src="p5.png" class="personagem" data-id="5" alt="Personagem 5">
+            <img src="p6.png" class="personagem" data-id="6" alt="Personagem 6">
         </div>
 
     </section>
 
+    <!-- MODAL DA FICHA -->
     <div id="fichaModal" class="ficha-modal">
         <div class="ficha-box">
 
@@ -37,8 +38,10 @@
 
             <div class="ficha-corpo">
 
-                <img id="fichaImagem" class="foto-personagem" src="">
+                <!-- FOTO PRINCIPAL -->
+                <img id="fichaImagem" class="foto-personagem" src="" alt="Personagem">
 
+                <!-- INFO -->
                 <div class="info-ficha">
 
                     <h1 id="fichaNome"></h1>
@@ -47,22 +50,34 @@
                     <p><strong>Classe:</strong> <span id="fichaClasse"></span></p>
                     <p><strong>NEX:</strong> <span id="fichaNex"></span></p>
 
-                    <div class="link-ficha" onclick="toggleSecao('atributosSecao')">Atributos >></div>
+                    <!-- ATRIBUTOS -->
+                    <div class="link-ficha" onclick="toggleSecao('atributosSecao')">
+                        Atributos >>
+                    </div>
                     <div id="atributosSecao" class="conteudo-toggle">
-                        <img id="fichaAtributosImg" class="atributos-img" src="">
+                        <img id="fichaAtributosImg" class="atributos-img" src="" alt="Atributos">
                     </div>
 
-                    <div class="link-ficha" onclick="toggleSecao('periciasSecao')">Perícias >></div>
+                    <!-- PERÍCIAS -->
+                    <div class="link-ficha" onclick="toggleSecao('periciasSecao')">
+                        Perícias >>
+                    </div>
                     <div id="periciasSecao" class="conteudo-toggle">
                         <ul id="fichaPericias"></ul>
                     </div>
 
-                    <div class="link-ficha" onclick="toggleSecao('armasSecao')">Armas >></div>
+                    <!-- ARMAS -->
+                    <div class="link-ficha" onclick="toggleSecao('armasSecao')">
+                        Armas >>
+                    </div>
                     <div id="armasSecao" class="conteudo-toggle">
                         <div id="fichaArmas"></div>
                     </div>
 
-                    <div class="link-ficha" onclick="toggleSecao('rituaisSecao')">Rituais >></div>
+                    <!-- RITUAIS -->
+                    <div class="link-ficha" onclick="toggleSecao('rituaisSecao')">
+                        Rituais >>
+                    </div>
                     <div id="rituaisSecao" class="conteudo-toggle">
                         <ul id="fichaRituais"></ul>
                     </div>
@@ -70,7 +85,6 @@
                 </div>
 
             </div>
-
         </div>
     </div>
 
