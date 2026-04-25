@@ -1,0 +1,106 @@
+```html id="htmlfinalcorrigido"
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexatombe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="topbar">
+        <img src="imagens/logo.png" alt="Logo" class="logo">
+    </header>
+
+    <!-- TELA PRINCIPAL -->
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="personagens">
+            <img src="imagens/p1.png" class="personagem" data-id="1">
+            <img src="imagens/p2.png" class="personagem" data-id="2">
+            <img src="imagens/p3.png" class="personagem" data-id="3">
+            <img src="imagens/p4.png" class="personagem" data-id="4">
+            <img src="imagens/p5.png" class="personagem" data-id="5">
+            <img src="imagens/p6.png" class="personagem" data-id="6">
+        </div>
+
+    </section>
+
+    <!-- FICHA DO PERSONAGEM -->
+    <div id="fichaModal" class="ficha-modal">
+
+        <div class="ficha-box">
+
+            <!-- TOPO DA FICHA -->
+            <div class="ficha-header">
+                <span class="fechar">×</span>
+            </div>
+
+            <!-- CORPO DA FICHA -->
+            <div class="ficha-corpo">
+
+                <!-- FOTO DO PERSONAGEM -->
+                <img id="fichaImagem" class="foto-personagem" src="">
+
+                <!-- INFORMAÇÕES -->
+                <div class="info-ficha">
+
+                    <h1 id="fichaNome">Nome</h1>
+
+                    <p><strong>Idade:</strong> <span id="fichaIdade"></span></p>
+                    <p><strong>Classe:</strong> <span id="fichaClasse"></span></p>
+                    <p><strong>NEX:</strong> <span id="fichaNex"></span></p>
+
+                    <!-- ATRIBUTOS -->
+                    <div class="link-ficha" onclick="toggleSecao('atributosSecao')">
+                        Atributos >>
+                    </div>
+
+                    <div id="atributosSecao" class="conteudo-toggle">
+                        <img id="fichaAtributosImg" class="atributos-img" src="">
+                    </div>
+
+                    <!-- PERÍCIAS -->
+                    <div class="link-ficha" onclick="toggleSecao('periciasSecao')">
+                        Perícias >>
+                    </div>
+
+                    <div id="periciasSecao" class="conteudo-toggle">
+                        <ul id="fichaPericias"></ul>
+                    </div>
+
+                    <!-- ARMAS -->
+                    <div class="link-ficha" onclick="toggleSecao('armasSecao')">
+                        Armas >>
+                    </div>
+
+                    <div id="armasSecao" class="conteudo-toggle">
+                        <div id="fichaArmas"></div>
+                    </div>
+
+                    <!-- RITUAIS -->
+                    <div class="link-ficha" onclick="toggleSecao('rituaisSecao')">
+                        Rituais >>
+                    </div>
+
+                    <div id="rituaisSecao" class="conteudo-toggle">
+                        <ul id="fichaRituais"></ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
