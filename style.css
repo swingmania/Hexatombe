@@ -7,9 +7,9 @@
 
 body{
     font-family:Arial, sans-serif;
-    background:black;
-    overflow-x:hidden;
+    background:#000;
     color:white;
+    overflow-x:hidden;
 }
 
 
@@ -19,12 +19,12 @@ body{
 .topbar{
     width:100%;
     min-height:90px;
-    background:black;
+    background:#000;
     display:flex;
     justify-content:center;
     align-items:center;
-    border-bottom:2px solid #220000;
     padding:10px;
+    border-bottom:2px solid #220000;
 }
 
 .logo{
@@ -35,25 +35,24 @@ body{
 
 
 /* =========================
-   HERO / TELA PRINCIPAL
+   HERO / FUNDO
 ========================= */
 .hero{
     min-height:calc(100vh - 90px);
-    background-image:url('fundo.jpg');
+
+    background:
+        linear-gradient(rgba(30,0,0,0.65), rgba(0,0,0,0.8)),
+        url("fundo.jpg");
+
+    background-color:#120000;
     background-size:cover;
     background-position:center;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    position:relative;
     padding:20px;
-}
-
-.overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(70,0,0,0.35);
-    z-index:1;
+    position:relative;
 }
 
 
@@ -65,8 +64,8 @@ body{
     flex-wrap:wrap;
     justify-content:center;
     gap:15px;
-    z-index:2;
-    position:relative;
+    width:100%;
+    max-width:1200px;
 }
 
 .personagem{
@@ -74,14 +73,16 @@ body{
     height:320px;
     object-fit:cover;
     border:2px solid #550000;
+    border-radius:8px;
     cursor:pointer;
     transition:0.3s ease;
+    background:#1a0000;
 }
 
 .personagem:hover{
     transform:scale(1.05);
     border-color:red;
-    box-shadow:0 0 20px red;
+    box-shadow:0 0 20px rgba(255,0,0,0.5);
 }
 
 
@@ -110,12 +111,13 @@ body{
 
     background:#4b0000;
     border:2px solid #700000;
-    box-shadow:0 0 25px rgba(255,0,0,0.25);
     border-radius:10px;
+
+    box-shadow:0 0 25px rgba(255,0,0,0.25);
 }
 
 
-/* HEADER DA FICHA */
+/* TOPO DA FICHA */
 .ficha-header{
     background:#2a0000;
     padding:12px 20px;
@@ -139,7 +141,7 @@ body{
 }
 
 
-/* CORPO DA FICHA */
+/* CORPO */
 .ficha-corpo{
     display:flex;
     gap:25px;
@@ -171,7 +173,7 @@ body{
 }
 
 
-/* LINKS DAS SEÇÕES */
+/* LINKS SEÇÕES */
 .link-ficha{
     margin-top:15px;
     font-weight:bold;
@@ -190,6 +192,7 @@ body{
     max-height:0;
     opacity:0;
     overflow:hidden;
+
     transition:
         max-height 0.35s ease,
         opacity 0.25s ease;
@@ -245,9 +248,9 @@ li{
 
 
 /* =========================
-   RESPONSIVIDADE TABLET/MOBILE
+   RESPONSIVO TABLET
 ========================= */
-@media (max-width: 950px){
+@media (max-width:950px){
 
     .ficha-corpo{
         flex-direction:column;
@@ -280,9 +283,9 @@ li{
 
 
 /* =========================
-   CELULARES PEQUENOS
+   RESPONSIVO MOBILE
 ========================= */
-@media (max-width: 600px){
+@media (max-width:600px){
 
     .personagem{
         width:85px;
