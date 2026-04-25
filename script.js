@@ -18,7 +18,7 @@ const personagens = {
     },
 
     2: {
-        nome: "Personagem 2",
+        nome: "Resenda sem H no lugar do D",
         idade: "--",
         classe: "--",
         nex: "--",
@@ -30,7 +30,7 @@ const personagens = {
     },
 
     3: {
-        nome: "Personagem 3",
+        nome: "Iza Valkar",
         idade: "--",
         classe: "--",
         nex: "--",
@@ -42,7 +42,7 @@ const personagens = {
     },
 
     4: {
-        nome: "Personagem 4",
+        nome: "Léia/Ollie",
         idade: "--",
         classe: "--",
         nex: "--",
@@ -54,7 +54,7 @@ const personagens = {
     },
 
     5: {
-        nome: "Personagem 5",
+        nome: "Antonio Montana",
         idade: "--",
         classe: "--",
         nex: "--",
@@ -66,7 +66,7 @@ const personagens = {
     },
 
     6: {
-        nome: "Personagem 6",
+        nome: "Sora",
         idade: "--",
         classe: "--",
         nex: "--",
