@@ -1,7 +1,7 @@
 
 const personagens = {
     1: {
-        nome: "Makx",
+        nome: "Makx Ferraz",
         idade: "23",
         classe: "Ocultista",
         nex: "55%",
