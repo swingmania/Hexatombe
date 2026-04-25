@@ -35,7 +35,7 @@ body{
 ========================= */
 .hero{
     min-height:calc(100vh - 90px);
-    background-image:url('imagens/fundo.jpg');
+    background-image:url('fundo.jpg');
     background-size:cover;
     background-position:center;
     display:flex;
@@ -104,19 +104,16 @@ body{
 /* HEADER DA FICHA */
 .ficha-header{
     background:#2a0000;
-    padding:20px;
-    text-align:center;
+    padding:10px 20px;
     position:relative;
 }
 
-.ficha-logo{
-    width:140px;
-}
 
+/* BOTÃO FECHAR */
 .fechar{
     position:absolute;
     right:20px;
-    top:15px;
+    top:10px;
     font-size:30px;
     cursor:pointer;
     color:white;
@@ -145,7 +142,7 @@ body{
 }
 
 
-/* INFO DA FICHA */
+/* INFO */
 .info-ficha{
     flex:1;
     color:white;
@@ -157,7 +154,7 @@ body{
 }
 
 
-/* LINKS DAS SEÇÕES */
+/* LINKS */
 .link-ficha{
     margin-top:15px;
     font-weight:bold;
@@ -176,10 +173,7 @@ body{
     max-height:0;
     opacity:0;
     overflow:hidden;
-    transition:
-        max-height 0.35s ease,
-        opacity 0.25s ease;
-
+    transition:max-height 0.35s ease, opacity 0.25s ease;
     margin-top:10px;
     padding-left:10px;
 }
@@ -226,4 +220,4 @@ ul{
 li{
     margin-bottom:5px;
 }
-
+```
