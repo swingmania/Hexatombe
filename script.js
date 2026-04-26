@@ -1,6 +1,6 @@
 
 alert("script carregou");
-```
+
 
 // ================================
 // PERSONAGENS FIXOS
