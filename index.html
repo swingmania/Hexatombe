@@ -1,4 +1,4 @@
-
+```html id="htmlcompletoadd"
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hexatombe</title>
 
-
-    <!-- CSS -->
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,21 +16,22 @@
         <img src="logo.png" alt="Logo" class="logo">
     </header>
 
-    <!-- TELA PRINCIPAL -->
+    <!-- HERO -->
     <section class="hero">
 
         <div class="personagens">
-            <img src="p1.png" class="personagem" data-id="1" alt="Personagem 1">
-            <img src="p2.png" class="personagem" data-id="2" alt="Personagem 2">
-            <img src="p3.png" class="personagem" data-id="3" alt="Personagem 3">
-            <img src="p4.png" class="personagem" data-id="4" alt="Personagem 4">
-            <img src="p5.png" class="personagem" data-id="5" alt="Personagem 5">
-            <img src="p6.png" class="personagem" data-id="6" alt="Personagem 6">
+            <img src="p1.png" class="personagem" data-id="1" alt="P1">
+            <img src="p2.png" class="personagem" data-id="2" alt="P2">
+            <img src="p3.png" class="personagem" data-id="3" alt="P3">
+            <img src="p4.png" class="personagem" data-id="4" alt="P4">
+            <img src="p5.png" class="personagem" data-id="5" alt="P5">
+            <img src="p6.png" class="personagem" data-id="6" alt="P6">
         </div>
 
     </section>
 
-    <!-- MODAL DA FICHA -->
+
+    <!-- MODAL FICHA -->
     <div id="fichaModal" class="ficha-modal">
         <div class="ficha-box">
 
@@ -55,7 +55,7 @@
                         Atributos >>
                     </div>
                     <div id="atributosSecao" class="conteudo-toggle">
-                        <img id="fichaAtributosImg" class="atributos-img" src="" alt="Atributos">
+                        <img id="fichaAtributosImg" class="atributos-img" src="">
                     </div>
 
                     <div class="link-ficha" onclick="toggleSecao('periciasSecao')">
@@ -82,6 +82,51 @@
                 </div>
 
             </div>
+
+        </div>
+    </div>
+
+
+    <!-- BOTÃO ADICIONAR -->
+    <button id="btnAdicionar" class="btn-adicionar">
+        Adicionar
+    </button>
+
+
+    <!-- MODAL ADICIONAR -->
+    <div id="modalAdicionar" class="ficha-modal">
+        <div class="ficha-box add-box">
+
+            <div class="ficha-header">
+                <span class="fechar-add">×</span>
+            </div>
+
+            <div class="form-add">
+
+                <h2>Novo Registro</h2>
+
+                <label>Tipo de Adição</label>
+                <select id="tipoAdd">
+                    <option value="Criatura">Criatura</option>
+                    <option value="Animal">Animal</option>
+                    <option value="NPC">NPC</option>
+                </select>
+
+                <label>Nome</label>
+                <input type="text" id="nomeAdd">
+
+                <label>Imagem</label>
+                <input type="file" id="imagemAdd" accept="image/*">
+
+                <label>Descrição</label>
+                <textarea id="descricaoAdd"></textarea>
+
+                <button onclick="salvarNovoItem()">
+                    Salvar
+                </button>
+
+            </div>
+
         </div>
     </div>
 
