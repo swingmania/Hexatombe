@@ -1,7 +1,4 @@
 
-alert("script carregou");
-
-
 // ================================
 // PERSONAGENS FIXOS
 // ================================
@@ -23,19 +20,73 @@ const personagens = {
         rituais: ["Hemorragia", "Derrame de Sangue"]
     },
 
-    2: { nome:"Personagem 2", idade:"--", classe:"--", nex:"--", imagem:"p2.png", atributos:"fichaAtributosimg.png", pericias:[], armas:[], rituais:[] },
-    3: { nome:"Personagem 3", idade:"--", classe:"--", nex:"--", imagem:"p3.png", atributos:"fichaAtributosimg.png", pericias:[], armas:[], rituais:[] },
-    4: { nome:"Personagem 4", idade:"--", classe:"--", nex:"--", imagem:"p4.png", atributos:"fichaAtributosimg.png", pericias:[], armas:[], rituais:[] },
-    5: { nome:"Personagem 5", idade:"--", classe:"--", nex:"--", imagem:"p5.png", atributos:"fichaAtributosimg.png", pericias:[], armas:[], rituais:[] },
-    6: { nome:"Personagem 6", idade:"--", classe:"--", nex:"--", imagem:"p6.png", atributos:"fichaAtributosimg.png", pericias:[], armas:[], rituais:[] }
+    2: {
+        nome: "Personagem 2",
+        idade: "--",
+        classe: "--",
+        nex: "--",
+        imagem: "p2.png",
+        atributos: "fichaAtributosimg.png",
+        pericias: [],
+        armas: [],
+        rituais: []
+    },
+
+    3: {
+        nome: "Personagem 3",
+        idade: "--",
+        classe: "--",
+        nex: "--",
+        imagem: "p3.png",
+        atributos: "fichaAtributosimg.png",
+        pericias: [],
+        armas: [],
+        rituais: []
+    },
+
+    4: {
+        nome: "Personagem 4",
+        idade: "--",
+        classe: "--",
+        nex: "--",
+        imagem: "p4.png",
+        atributos: "fichaAtributosimg.png",
+        pericias: [],
+        armas: [],
+        rituais: []
+    },
+
+    5: {
+        nome: "Personagem 5",
+        idade: "--",
+        classe: "--",
+        nex: "--",
+        imagem: "p5.png",
+        atributos: "fichaAtributosimg.png",
+        pericias: [],
+        armas: [],
+        rituais: []
+    },
+
+    6: {
+        nome: "Personagem 6",
+        idade: "--",
+        classe: "--",
+        nex: "--",
+        imagem: "p6.png",
+        atributos: "fichaAtributosimg.png",
+        pericias: [],
+        armas: [],
+        rituais: []
+    }
 };
 
 
 // ================================
 // CLIQUE PERSONAGENS FIXOS
 // ================================
-document.querySelectorAll(".personagem").forEach(personagem=>{
-    personagem.addEventListener("click", ()=>{
+document.querySelectorAll(".personagem").forEach(personagem => {
+    personagem.addEventListener("click", () => {
         const id = personagem.dataset.id;
         abrirFicha(personagens[id]);
     });
@@ -45,7 +96,7 @@ document.querySelectorAll(".personagem").forEach(personagem=>{
 // ================================
 // ABRIR FICHA
 // ================================
-function abrirFicha(dados){
+function abrirFicha(dados) {
     document.getElementById("fichaModal").style.display = "flex";
 
     document.getElementById("fichaNome").innerText = dados.nome;
@@ -67,24 +118,30 @@ function abrirFicha(dados){
 // ================================
 // FECHAR MODAIS
 // ================================
-document.querySelector(".fechar").addEventListener("click", ()=>{
-    document.getElementById("fichaModal").style.display = "none";
-});
+const fecharFicha = document.querySelector(".fechar");
+if (fecharFicha) {
+    fecharFicha.addEventListener("click", () => {
+        document.getElementById("fichaModal").style.display = "none";
+    });
+}
 
-document.querySelector(".fechar-add").addEventListener("click", ()=>{
-    document.getElementById("modalAdicionar").style.display = "none";
-});
+const fecharAdd = document.querySelector(".fechar-add");
+if (fecharAdd) {
+    fecharAdd.addEventListener("click", () => {
+        document.getElementById("modalAdicionar").style.display = "none";
+    });
+}
 
 
 // ================================
 // TOGGLE SEÇÕES
 // ================================
-function toggleSecao(id){
+function toggleSecao(id) {
     document.getElementById(id).classList.toggle("aberto");
 }
 
-function fecharTodasSecoes(){
-    document.querySelectorAll(".conteudo-toggle").forEach(secao=>{
+function fecharTodasSecoes() {
+    document.querySelectorAll(".conteudo-toggle").forEach(secao => {
         secao.classList.remove("aberto");
     });
 }
@@ -93,11 +150,11 @@ function fecharTodasSecoes(){
 // ================================
 // PREENCHER LISTAS
 // ================================
-function preencherLista(id,itens){
+function preencherLista(id, itens) {
     const lista = document.getElementById(id);
     lista.innerHTML = "";
 
-    itens.forEach(item=>{
+    itens.forEach(item => {
         lista.innerHTML += `<li>${item}</li>`;
     });
 }
@@ -106,11 +163,11 @@ function preencherLista(id,itens){
 // ================================
 // PREENCHER ARMAS
 // ================================
-function preencherArmas(armas){
+function preencherArmas(armas) {
     const container = document.getElementById("fichaArmas");
     container.innerHTML = "";
 
-    armas.forEach(arma=>{
+    armas.forEach(arma => {
         container.innerHTML += `
             <div class="arma-card">
                 <img src="${arma.imagem}" class="arma-img">
@@ -122,32 +179,34 @@ function preencherArmas(armas){
 
 
 // ================================
-// MODAL ADICIONAR
+// BOTÃO ADICIONAR
 // ================================
-document.getElementById("btnAdicionar").addEventListener("click", ()=>{
-    document.getElementById("modalAdicionar").style.display = "flex";
-});
+const btnAdicionar = document.getElementById("btnAdicionar");
+
+if (btnAdicionar) {
+    btnAdicionar.addEventListener("click", () => {
+        document.getElementById("modalAdicionar").style.display = "flex";
+    });
+}
 
 
 // ================================
 // SALVAR NOVO ITEM
 // ================================
-function salvarNovoItem(){
-
+function salvarNovoItem() {
     const tipo = document.getElementById("tipoAdd").value;
     const nome = document.getElementById("nomeAdd").value;
     const descricao = document.getElementById("descricaoAdd").value;
     const imagemInput = document.getElementById("imagemAdd");
 
-    if(!nome || !descricao || !imagemInput.files[0]){
+    if (!nome || !descricao || !imagemInput.files[0]) {
         alert("Preencha tudo.");
         return;
     }
 
     const reader = new FileReader();
 
-    reader.onload = function(e){
-
+    reader.onload = function (e) {
         const novoItem = {
             tipo,
             nome,
@@ -156,6 +215,7 @@ function salvarNovoItem(){
         };
 
         const itens = JSON.parse(localStorage.getItem("registrosHexatombe")) || [];
+
         itens.push(novoItem);
 
         localStorage.setItem("registrosHexatombe", JSON.stringify(itens));
@@ -176,16 +236,14 @@ function salvarNovoItem(){
 // ================================
 // RENDERIZAR ITEM
 // ================================
-function renderizarNovoItem(item){
-
+function renderizarNovoItem(item) {
     const container = document.querySelector(".personagens");
 
     const card = document.createElement("img");
     card.src = item.imagem;
     card.className = "personagem";
 
-    card.addEventListener("click", ()=>{
-
+    card.addEventListener("click", () => {
         document.getElementById("fichaModal").style.display = "flex";
 
         document.getElementById("fichaNome").innerText = item.nome;
@@ -196,9 +254,7 @@ function renderizarNovoItem(item){
         document.getElementById("fichaImagem").src = item.imagem;
         document.getElementById("fichaAtributosImg").src = "";
 
-        document.getElementById("fichaPericias").innerHTML =
-            `<li>${item.descricao}</li>`;
-
+        document.getElementById("fichaPericias").innerHTML = `<li>${item.descricao}</li>`;
         document.getElementById("fichaRituais").innerHTML = "";
         document.getElementById("fichaArmas").innerHTML = "";
 
@@ -212,13 +268,11 @@ function renderizarNovoItem(item){
 // ================================
 // CARREGAR ITENS SALVOS
 // ================================
-window.addEventListener("load", ()=>{
-
+window.addEventListener("load", () => {
     const itens = JSON.parse(localStorage.getItem("registrosHexatombe")) || [];
 
-    itens.forEach(item=>{
+    itens.forEach(item => {
         renderizarNovoItem(item);
     });
-
 });
 ```
