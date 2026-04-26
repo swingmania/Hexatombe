@@ -1,4 +1,4 @@
-
+```css id="csscompletoadd"
 *{
     margin:0;
     padding:0;
@@ -13,9 +13,7 @@ body{
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 .topbar{
     width:100%;
     min-height:90px;
@@ -34,16 +32,12 @@ body{
 }
 
 
-/* =========================
-   HERO / FUNDO
-========================= */
+/* HERO */
 .hero{
     min-height:calc(100vh - 90px);
-
     background:
         linear-gradient(rgba(30,0,0,0.65), rgba(0,0,0,0.8)),
         url("fundo.jpg");
-
     background-color:#120000;
     background-size:cover;
     background-position:center;
@@ -52,13 +46,10 @@ body{
     justify-content:center;
     align-items:center;
     padding:20px;
-    position:relative;
 }
 
 
-/* =========================
-   PERSONAGENS
-========================= */
+/* PERSONAGENS */
 .personagens{
     display:flex;
     flex-wrap:wrap;
@@ -86,9 +77,7 @@ body{
 }
 
 
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 .ficha-modal{
     display:none;
     position:fixed;
@@ -101,23 +90,19 @@ body{
 }
 
 
-/* =========================
-   BOX DA FICHA
-========================= */
+/* BOX */
 .ficha-box{
     width:min(900px, 100%);
     max-height:90vh;
     overflow-y:auto;
-
     background:#4b0000;
     border:2px solid #700000;
     border-radius:10px;
-
     box-shadow:0 0 25px rgba(255,0,0,0.25);
 }
 
 
-/* TOPO DA FICHA */
+/* HEADER MODAL */
 .ficha-header{
     background:#2a0000;
     padding:12px 20px;
@@ -125,8 +110,9 @@ body{
 }
 
 
-/* BOTÃO FECHAR */
-.fechar{
+/* BOTÕES FECHAR */
+.fechar,
+.fechar-add{
     position:absolute;
     right:20px;
     top:8px;
@@ -136,12 +122,13 @@ body{
     transition:.2s;
 }
 
-.fechar:hover{
+.fechar:hover,
+.fechar-add:hover{
     color:red;
 }
 
 
-/* CORPO */
+/* CORPO FICHA */
 .ficha-corpo{
     display:flex;
     gap:25px;
@@ -150,7 +137,7 @@ body{
 }
 
 
-/* FOTO PERSONAGEM */
+/* FOTO */
 .foto-personagem{
     width:260px;
     max-width:100%;
@@ -163,23 +150,20 @@ body{
 /* INFO */
 .info-ficha{
     flex:1;
-    min-width:0;
 }
 
 .info-ficha h1{
     font-size:42px;
     margin-bottom:20px;
-    word-break:break-word;
 }
 
 
-/* LINKS SEÇÕES */
+/* LINKS */
 .link-ficha{
     margin-top:15px;
     font-weight:bold;
     cursor:pointer;
     transition:.2s;
-    user-select:none;
 }
 
 .link-ficha:hover{
@@ -187,16 +171,12 @@ body{
 }
 
 
-/* CONTEÚDO EXPANSÍVEL */
+/* TOGGLES */
 .conteudo-toggle{
     max-height:0;
     opacity:0;
     overflow:hidden;
-
-    transition:
-        max-height 0.35s ease,
-        opacity 0.25s ease;
-
+    transition:max-height .35s ease, opacity .25s ease;
     margin-top:10px;
     padding-left:10px;
 }
@@ -225,7 +205,6 @@ body{
     padding:8px;
     background:#2a0000;
     border-radius:6px;
-    flex-wrap:wrap;
 }
 
 .arma-img{
@@ -247,28 +226,81 @@ li{
 }
 
 
-/* =========================
-   RESPONSIVO TABLET
-========================= */
+/* BOTÃO ADICIONAR */
+.btn-adicionar{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:14px 24px;
+    background:#700000;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+    z-index:1000;
+    transition:.3s;
+}
+
+.btn-adicionar:hover{
+    background:red;
+    transform:scale(1.05);
+}
+
+
+/* FORMULÁRIO ADD */
+.form-add{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:25px;
+}
+
+.form-add h2{
+    margin-bottom:10px;
+}
+
+.form-add input,
+.form-add textarea,
+.form-add select{
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+}
+
+.form-add textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.form-add button{
+    padding:12px;
+    background:#700000;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.form-add button:hover{
+    background:red;
+}
+
+
+/* RESPONSIVO */
 @media (max-width:950px){
 
     .ficha-corpo{
         flex-direction:column;
         align-items:center;
-        padding:20px;
     }
 
     .foto-personagem{
         width:220px;
-    }
-
-    .info-ficha{
-        width:100%;
-    }
-
-    .info-ficha h1{
-        font-size:32px;
-        text-align:center;
     }
 
     .personagem{
@@ -276,15 +308,12 @@ li{
         height:250px;
     }
 
-    .logo{
-        width:130px;
+    .info-ficha h1{
+        font-size:32px;
+        text-align:center;
     }
 }
 
-
-/* =========================
-   RESPONSIVO MOBILE
-========================= */
 @media (max-width:600px){
 
     .personagem{
@@ -292,21 +321,13 @@ li{
         height:190px;
     }
 
-    .ficha-corpo{
-        padding:15px;
-    }
-
     .info-ficha h1{
         font-size:26px;
     }
 
-    .fechar{
-        font-size:26px;
-    }
-
-    .arma-img{
-        width:50px;
-        height:50px;
+    .btn-adicionar{
+        padding:10px 18px;
+        font-size:14px;
     }
 }
-
+```
